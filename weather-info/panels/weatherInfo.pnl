@@ -1,0 +1,55 @@
+V 14
+1
+LANG:10000 0 
+PANEL,-1 -1 422 419 N "SiemensWebFunctionalGray" 0
+E E E E E 1 -1 -1 0  231 44
+""0  1
+E E 4
+"CBRef" "1"
+"EClose" E
+"dpi" "96"
+"pdpi" "95.8637"
+0 0 0
+""
+DISPLAY_LAYER, 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0
+LAYER, 0 
+0
+1 1 0 "" 10
+0
+1 10 1 "" 10
+0
+0
+LAYER, 1 
+0
+0
+LAYER, 2 
+0
+0
+LAYER, 3 
+0
+0
+LAYER, 4 
+0
+0
+LAYER, 5 
+0
+0
+LAYER, 6 
+0
+0
+LAYER, 7 
+0
+0
+3 0 "PANEL_REF1" -1
+"layoutAlignment" "AlignNone"
+"" ""
+"weatherDetails.pnl" 231 44 T 0 1 0 1 -51 194
+1
+"$city""Eisenstadt"
+3 1 "PANEL_REF2" -1
+"layoutAlignment" "AlignNone"
+"" ""
+"weatherDetails.pnl" 233.25 329 T 0 1 0 1 -53.25 -299
+1
+"$city""Vienna"
+0

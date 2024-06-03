@@ -1,0 +1,284 @@
+V 14
+1
+LANG:10000 0 
+PANEL,-1 -1 419 210 N "SiemensWebFunctionalGray" 1
+"$city"
+"main()
+{
+  connect();
+}
+" 0
+ E E E E 1 -1 -1 0  180 30
+""0  1
+E "private string baseDp = $city;
+
+public void updateWeatherInfo(dyn_string dpes, dyn_string data)
+{
+  mapping location = jsonDecode(data[1]);
+  mapping current = jsonDecode(data[2]);
+
+  if (location.contains(\"name\"))
+  {
+    LOCATION_TEXT.text = location.name;
+    TEMP_TEXT.text = current[\"temperature\"] + \" \" + location[\"degreetype\"] + \"°\";
+    HUM_TEXT.text = current[\"humidity\"] + \" %\";
+    WIND_TEXT.text = current[\"winddisplay\"];
+    ICON.text = \"<html><img src='pictures:\" + current[\"skycode\"] + \".gif'></img></html>\";
+  }
+  else
+  {
+    LOCATION_TEXT.text = \"?\";
+    TEMP_TEXT.text = \"-\";
+    HUM_TEXT.text = \"-\";
+    WIND_TEXT.text = \"-\";
+    ICON.text = \"\";
+  }
+}
+
+public void connect()
+{
+  dpConnect(\"updateWeatherInfo\", true, makeDynString(baseDp + \".locationDetails\", baseDp + \".current\"));
+}
+
+" 0
+ 4
+"CBRef" "1"
+"EClose" E
+"dpi" "96"
+"pdpi" "95.8637"
+0 0 0
+""
+DISPLAY_LAYER, 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0
+LAYER, 0 
+0
+6 10
+"RECTANGLE1"
+""
+1 10 10 E E E 1 E 1 E N {0,0,0} E N "SiemensStone35" E E
+ E E
+9 0 0 0 0 0
+E E E
+0
+1
+LANG:10000 0 
+
+3
+"layoutAlignment" "AlignNone"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E -1 1 3 2 1 E 1.025641025641026 0 0.9047619047619049 -0.2564102564102573 0.9523809523809474 1 E 10 10 400 220
+2 1
+"LOCATION_TEXT"
+""
+1 150.5 33 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+0 0 0 0 0 0
+E E E
+0
+1
+LANG:10000 0 
+
+4
+"layoutAlignment" "AlignNone"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+"transformable" "0"
+E E 0 1 3 2 1 E 1.0042194092827 0 1 -60.64345991561179 0 0 E 150.5 33 269 69
+0 2 2 "0s" 0 0 0 192 0 0  150.5 33 1
+3
+LANG:10000 48 Noto Sans,-1,27,5,700,0,0,0,0,0,0,0,0,0,0,1,Bold
+LANG:10001 48 Noto Sans,-1,27,5,700,0,0,0,0,0,0,0,0,0,0,1,Bold
+LANG:10027 48 MS Shell Dlg 2,-1,11,5,400,0,0,0,0,0,0,0,0,0,0,1
+0 1
+LANG:10000 8 Location
+2 4
+"PRIMITIVE_TEXT1"
+""
+1 24.5 90.99999999999994 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+3 0 0 0 0 0
+E E E
+0
+1
+LANG:10000 0 
+
+4
+"layoutAlignment" "AlignNone"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+"transformable" "0"
+E E 0 1 3 2 1 E U  0 E 24.5 90.99999999999994 163 118
+0 2 2 "0s" 0 0 0 192 0 0  24.5 90.99999999999994 1
+3
+LANG:10000 51 Noto Sans,-1,21,5,400,0,0,0,0,0,0,0,0,0,0,1,Regular
+LANG:10001 48 Noto Sans,-1,21,5,700,0,0,0,0,0,0,0,0,0,0,1,Bold
+LANG:10027 51 Noto Sans,-1,16,5,400,0,0,0,0,0,0,0,0,0,0,1,Regular
+0 1
+LANG:10000 12 Temperature:
+2 5
+"PRIMITIVE_TEXT2"
+""
+1 64 124 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+4 0 0 0 0 0
+E E E
+0
+1
+LANG:10000 0 
+
+4
+"layoutAlignment" "AlignNone"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+"transformable" "0"
+E E 0 1 3 2 1 E U  0 E 64 124 163 151
+0 2 2 "0s" 0 0 0 192 0 0  64 124 1
+3
+LANG:10000 51 Noto Sans,-1,21,5,400,0,0,0,0,0,0,0,0,0,0,1,Regular
+LANG:10001 48 Noto Sans,-1,21,5,700,0,0,0,0,0,0,0,0,0,0,1,Bold
+LANG:10027 51 Noto Sans,-1,16,5,400,0,0,0,0,0,0,0,0,0,0,1,Regular
+0 1
+LANG:10000 9 Humidity:
+2 6
+"PRIMITIVE_TEXT3"
+""
+1 104 160.9999999999999 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+5 0 0 0 0 0
+E E E
+0
+1
+LANG:10000 0 
+
+4
+"layoutAlignment" "AlignNone"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+"transformable" "0"
+E E 0 1 3 2 1 E U  0 E 104 160.9999999999999 163 188
+0 2 2 "0s" 0 0 0 192 0 0  104 160.9999999999999 1
+3
+LANG:10000 51 Noto Sans,-1,21,5,400,0,0,0,0,0,0,0,0,0,0,1,Regular
+LANG:10001 48 Noto Sans,-1,21,5,700,0,0,0,0,0,0,0,0,0,0,1,Bold
+LANG:10027 51 Noto Sans,-1,16,5,400,0,0,0,0,0,0,0,0,0,0,1,Regular
+0 1
+LANG:10000 5 Wind:
+2 7
+"TEMP_TEXT"
+""
+1 180 90.99999999999994 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+6 0 0 0 0 0
+E E E
+0
+1
+LANG:10000 0 
+
+4
+"layoutAlignment" "AlignNone"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+"transformable" "0"
+E E 0 1 3 2 1 E U  0 E 180 90.99999999999994 239 118
+0 2 2 "0s" 0 0 0 192 0 0  180 90.99999999999994 1
+3
+LANG:10000 48 Noto Sans,-1,21,5,700,0,0,0,0,0,0,0,0,0,0,1,Bold
+LANG:10001 48 Noto Sans,-1,21,5,700,0,0,0,0,0,0,0,0,0,0,1,Bold
+LANG:10027 51 Noto Sans,-1,16,5,400,0,0,0,0,0,0,0,0,0,0,1,Regular
+0 1
+LANG:10000 4 TEMP
+2 8
+"HUM_TEXT"
+""
+1 180 124.7499999999999 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+7 0 0 0 0 0
+E E E
+0
+1
+LANG:10000 0 
+
+4
+"layoutAlignment" "AlignNone"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+"transformable" "0"
+E E 0 1 3 2 1 E U  0 E 180 124.7499999999999 234 152
+0 2 2 "0s" 0 0 0 192 0 0  180 124.7499999999999 1
+3
+LANG:10000 48 Noto Sans,-1,21,5,700,0,0,0,0,0,0,0,0,0,0,1,Bold
+LANG:10001 48 Noto Sans,-1,21,5,700,0,0,0,0,0,0,0,0,0,0,1,Bold
+LANG:10027 51 Noto Sans,-1,16,5,400,0,0,0,0,0,0,0,0,0,0,1,Regular
+0 1
+LANG:10000 3 HUM
+2 9
+"WIND_TEXT"
+""
+1 180 160.9999999999999 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+8 0 0 0 0 0
+E E E
+0
+1
+LANG:10000 0 
+
+4
+"layoutAlignment" "AlignNone"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+"transformable" "0"
+E E 0 1 3 2 1 E U  0 E 180 160.9999999999999 243 188
+0 2 2 "0s" 0 0 0 192 0 0  180 160.9999999999999 1
+3
+LANG:10000 48 Noto Sans,-1,21,5,700,0,0,0,0,0,0,0,0,0,0,1,Bold
+LANG:10001 48 Noto Sans,-1,21,5,700,0,0,0,0,0,0,0,0,0,0,1,Bold
+LANG:10027 51 Noto Sans,-1,16,5,400,0,0,0,0,0,0,0,0,0,0,1,Regular
+0 1
+LANG:10000 4 WIND
+29 11
+"ICON"
+""
+1 8 29 E E E 1 E 1 E N "_Transparent" E N "_Transparent" E E
+ E E
+10 0 0 0 0 0
+E E E
+0
+1
+LANG:10000 0 
+
+5
+"lineWidth" "int 0"
+"backgroundBrush" "fill [outline]"
+"frameShadow" "enum 16"
+"frameShape" "enum 0"
+"layoutAlignment" "AlignNone"
+3
+LANG:10000 51 Noto Sans,-1,16,5,400,0,0,0,0,0,0,0,0,0,0,1,Regular
+LANG:10001 51 Noto Sans,-1,16,5,400,0,0,0,0,0,0,0,0,0,0,1,Regular
+LANG:10027 51 Noto Sans,-1,16,5,400,0,0,0,0,0,0,0,0,0,0,1,Regular
+0  23 29 77 73
+5 Label
+0
+E0
+LAYER, 1 
+0
+0
+LAYER, 2 
+0
+0
+LAYER, 3 
+0
+0
+LAYER, 4 
+0
+0
+LAYER, 5 
+0
+0
+LAYER, 6 
+0
+0
+LAYER, 7 
+0
+0
+0

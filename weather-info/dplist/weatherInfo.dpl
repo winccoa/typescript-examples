@@ -1,0 +1,25 @@
+# ascii dump of database
+
+# DpType
+TypeName
+WeatherInfo.WeatherInfo	1#1
+	location	25#2
+	locationDetails	25#3
+	current	25#4
+	forecast	25#5
+
+# Datapoint/DpId
+DpName	TypeName	ID
+Eisenstadt	WeatherInfo	1513
+Vienna	WeatherInfo	1515
+
+# DpValue
+Manager/User	ElementName	TypeName	_original.._value	_original.._status64	_original.._stime
+UI (1)/0	Eisenstadt.location	WeatherInfo	"Eisenstadt, Austria"	0x8300000000000101	23.01.2024 16:00:57.096
+UI (1)/0	Eisenstadt.locationDetails	WeatherInfo	""	0x8300000000100101	23.04.2024 10:05:11.568
+UI (1)/0	Eisenstadt.current	WeatherInfo	""	0x8300000000100101	23.04.2024 10:05:16.296
+UI (1)/0	Eisenstadt.forecast	WeatherInfo	""	0x8300000000100101	23.04.2024 10:04:48.608
+UI (1)/0	Vienna.location	WeatherInfo	"Vienna, Austria"	0x8300000000300101	23.04.2024 10:06:04.960
+UI (1)/0	Vienna.locationDetails	WeatherInfo	""	0x8300000000100101	23.04.2024 10:05:44.744
+UI (1)/0	Vienna.current	WeatherInfo	""	0x8300000000100101	23.04.2024 10:06:21.640
+UI (1)/0	Vienna.forecast	WeatherInfo	""	0x8300000000100101	23.04.2024 10:06:06.648
